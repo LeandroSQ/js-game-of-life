@@ -1,0 +1,29 @@
+/* Light mode */
+html {
+	--background: #efefef;
+	--foreground: #cb670e;
+	--button-background: rgba(0, 0, 0, 0.025);
+	--button-foreground: #cb670e;
+	--container-background: #efefef;
+	--container-shadow: rgba(0, 0, 0, 0.25);
+	--container-border: #ccc;
+	--cell-alive: #2a2a2a;
+}
+
+body {
+	transition: background 500ms ease, backdrop-filter 1s ease;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+	html {
+		--background: #212121;
+		--foreground: #fefefe;
+		--button-background: rgba(255, 255, 255, 0.05);
+		--button-foreground: #fefefe;
+		--container-background: rgba(43, 43, 48, 0.45);
+		--container-shadow: rgba(0, 0, 0, 0.25);
+		--container-border: rgba(0, 0, 0, 0.1);
+        --cell-alive: #dddddd;
+	}
+}

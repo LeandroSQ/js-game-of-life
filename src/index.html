@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Page properties -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game of life</title>
+
+        <!-- SEO -->
+        <meta property="og:title" content="Game of life">
+        <meta property="og:type" content="game">
+        <meta property="og:image" content=""><!-- TODO: Insert the screenshot here -->
+
+        <!-- Theming -->
+        <link rel="icon" href="./assets/images/favicon.png" type="image/png" sizes="any">
+        <link rel="apple-touch-icon" href="./assets/images/favicon.png">
+        <meta name="theme-color" content="#fafafa">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
+        <!-- Main CSS style -->
+        <link rel="stylesheet" href="styles/style.min.css"/>
+    </head>
+    <body>
+        <div id="ui">
+            <header>
+                Game of life
+            </header>
+
+            <div id="container"></div>
+
+            <footer>
+                <span>Click to load patterns</span>
+                <ul>
+                    <li onclick="window._instance.loadPattern('pulsar')">Pulsar</li>
+                    <li onclick="window._instance.loadPattern('tub')">Tub</li>
+                    <li onclick="window._instance.loadPattern('blinker')">Blinker</li>
+                    <li onclick="window._instance.loadPattern('glider')">Glider</li>
+                    <li onclick="window._instance.randomPattern()">Random</li>
+                </ul>
+            </footer>
+        </div>
+
+        <script src="./scripts/bundle.js"></script>
+    </body>
+</html>
