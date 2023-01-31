@@ -161,7 +161,7 @@ export class Main {
 	// #region UI
 	public async loadPattern(filename) {
 		// Load the pattern
-		const pattern = await PatternLoader.load(`./../assets/pattern-${filename}.txt`);
+		const pattern = await PatternLoader.load(`pattern-${filename}.txt`);
 		this.grid.load(pattern);
 	}
 

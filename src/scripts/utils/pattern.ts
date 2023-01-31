@@ -3,6 +3,21 @@ import { Log } from "./log";
 
 export class PatternLoader {
 
+	/**
+	 * Resolves and expands an image to absolute path
+	 *
+	 * @param {string} identifier Specifies the file to be loaded
+	 * @return {string} The resolved path of the file
+	 */
+	private static resolvePath(identifier) {
+		const locationRoot = window.location.href.indexOf("http://localhost")
+			? window.location.href
+			: window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/"));
+		const relativePath = "/assets/";
+
+		return locationRoot + relativePath + identifier;
+	}
+
 	private static parse(data: string): Cell[][] {
 		// Split the data into lines
 		const lines = data.split("\n").map(x => x.trim());
@@ -33,7 +48,7 @@ export class PatternLoader {
 	}
 
 	public static async load(filename: string): Promise<Cell[][]> {
-		const response = await fetch(filename);
+		const response = await fetch(this.resolvePath(filename));
 		const data = await response.text();
 
 		return PatternLoader.parse(data);
